@@ -1,6 +1,8 @@
 const API_URL_RANDOM = 'https://api.thecatapi.com/v1/images/search?limit=2';
 const API_URL_FAVORITES = 'https://api.thecatapi.com/v1/favourites?';
 const API_KEY = 'api_key=live_fAkiaYHjeH5pgHCvyr3FKA79HR5kj5ZoRL1BJU7waZYFkdqfoaKqcb8aNZYzrH9A';
+const API_DELETE_FAVOURITE = (id) => `https://api.thecatapi.com/v1/favourites/${id}?api_key=live_fAkiaYHjeH5pgHCvyr3FKA79HR5kj5ZoRL1BJU7waZYFkdqfoaKqcb8aNZYzrH9A`
+
 
 const spanError = document.getElementById('error');
 
@@ -40,8 +42,14 @@ async function loadFavoritesmMichis() {
     if (res.status !== 200) {
         spanError.innerHTML = 'Hubo un error: ' + res.status + data.message;
     } else {
+        const section = document.getElementById('favoritesMichis')
+        section.innerHTML = ""
+        const h2 = document.createElement('h2')
+        const h2Text = document.createTextNode('Gatitos Favoritos')
+        h2.appendChild(h2Text)
+        section.appendChild(h2)
+
         data.forEach(kitty => {
-            const section = document.getElementById('favoritesMichis')
             const article = document.createElement('article')
             const img = document.createElement('img')
             const btn = document.createElement('button')
@@ -50,6 +58,7 @@ async function loadFavoritesmMichis() {
             img.src = kitty.image.url
             img.width = 150
             btn.appendChild(btnText);
+            btn.onclick = () => deleteFavouritesMichi(kitty.id)
             article.appendChild(img)
             article.appendChild(btn)
             section.appendChild(article)
@@ -76,6 +85,24 @@ async function saveFavouritesMichi(id) {
     
     if (resi.status !== 200) {
         spanError.innerHTML = 'Hubo un error: ' + resi.status + data.message;
+    } else {
+        console.log('Gatito guardado en favoritos');
+        loadFavoritesmMichis()
+    }
+}
+
+async function deleteFavouritesMichi(id) {
+    const resi = await fetch(API_DELETE_FAVOURITE(id), {
+        method: 'DELETE',
+});
+
+    const data = await resi.json();
+
+    if (resi.status !== 200) {
+        spanError.innerHTML = 'Hubo un error: ' + resi.status + data.message;
+    } else {
+        console.log('Gatito eliminado de favoritos');
+        loadFavoritesmMichis()
     }
 }
 
