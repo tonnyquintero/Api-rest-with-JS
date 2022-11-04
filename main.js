@@ -1,7 +1,7 @@
 const API_URL_RANDOM = 'https://api.thecatapi.com/v1/images/search?limit=2';
-const API_URL_FAVORITES = 'https://api.thecatapi.com/v1/favourites?';
-const API_KEY = 'api_key=live_fAkiaYHjeH5pgHCvyr3FKA79HR5kj5ZoRL1BJU7waZYFkdqfoaKqcb8aNZYzrH9A';
-const API_DELETE_FAVOURITE = (id) => `https://api.thecatapi.com/v1/favourites/${id}?api_key=live_fAkiaYHjeH5pgHCvyr3FKA79HR5kj5ZoRL1BJU7waZYFkdqfoaKqcb8aNZYzrH9A`
+const API_URL_FAVORITES = 'https://api.thecatapi.com/v1/favourites?api_key=';
+const API_KEY = 'live_fAkiaYHjeH5pgHCvyr3FKA79HR5kj5ZoRL1BJU7waZYFkdqfoaKqcb8aNZYzrH9A';
+const API_DELETE_FAVOURITE = (id) => `https://api.thecatapi.com/v1/favourites/${id}?api_key=`
 
 
 const spanError = document.getElementById('error');
@@ -33,7 +33,12 @@ async function reloadRandomMichis() {
 }
 
 async function loadFavoritesmMichis() {
-    const res = await fetch(`${API_URL_FAVORITES}&${API_KEY}`);
+    const res = await fetch(API_URL_FAVORITES, {
+        method: 'GET',
+        headers: {
+            'X-API-KEY': API_KEY
+        }
+    });
     const data = await res.json();
 
     console.log('Favorites')
@@ -68,10 +73,11 @@ async function loadFavoritesmMichis() {
 }
 
 async function saveFavouritesMichi(id) {
-    const resi = await fetch(`${API_URL_FAVORITES}&${API_KEY}`, {
+    const resi = await fetch(API_URL_FAVORITES, {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'X-API-KEY': API_KEY
         },
         body: JSON.stringify({
             image_id: id
@@ -94,6 +100,9 @@ async function saveFavouritesMichi(id) {
 async function deleteFavouritesMichi(id) {
     const resi = await fetch(API_DELETE_FAVOURITE(id), {
         method: 'DELETE',
+        headers: {
+            'X-API-KEY': API_KEY
+        }
 });
 
     const data = await resi.json();
