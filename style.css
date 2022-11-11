@@ -2,7 +2,6 @@
 
 
 body {
-    background-color: aqua;
     margin: 0;
     font-family: 'Roboto', sans-serif;
 }
@@ -26,6 +25,7 @@ body {
     background-color: bisque;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .kitty-card-fav {
@@ -34,18 +34,34 @@ body {
 
 h2 {
     text-align: center;
-    padding-bottom: 2em;
+
 }
 button {
-    background-color: red;
+    background-color: transparent;
+    color: blueviolet;
+    border: 1px solid blueviolet;
     width: 150px;
     margin-top: 1em;
+    border-radius: 20px;
+}
+
+.reload-button {
+    background-color: black;
+}
+
+.buttonContainer {
+    text-align: center;
 }
 
 #favoritesMichis {
     background-color: green;
     gap: 1em;
     display: flex;
+    padding-left: 3em;
+}
+
+img {
+    border-radius: 20px 20px 0 0;
 }
 
 article {
@@ -55,10 +71,22 @@ article {
 }
 
 @media screen and (max-width: 600px) { 
+    body {
+        margin: 1em auto;
+        font-family: 'Roboto', sans-serif;
+        width: 80%;
+
+    }
     #ramdomMichis {
         background-color: violet;
         gap: 1em;
         display: grid;
         grid-template-columns: 1fr 1fr;
+        margin: 0 auto;
+    }
+
+    #favoritesMichis { 
+        margin: 0 auto;
+        padding-left: 0;
     }
 }
