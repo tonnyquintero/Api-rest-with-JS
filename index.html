@@ -4,38 +4,61 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Gatos Aleatorios</title>
 </head>
 <body>
-    <h1>Gatitos App</h1>
+    <h1 class="main-title">Gatitos App</h1>
 
+    <h2>Gatos Aleatorios</h2>
+
+    <span id="error"></span>
     <section id="ramdomMichis">
-        <h2>Gatos Aleatorios</h2>
 
-        <span id="error"></span>
-
-        <article>
+        <article class="kitty-card">
             <img id="img1" width="150" height="150" alt="Foto de gatito aleatorio">
             <button id="btn1">
                 Guardar gato en favoritos</button>
         </article>
 
-        <article>
+        <article class="kitty-card">
             <img id="img2" width="150" height="150" alt="Foto de gatito aleatorio">
             <button id="btn2">Guardar gato en favoritos</button>
         </article>
 
+        <article class="kitty-card">
+            <img id="img3" width="150" height="150" alt="Foto de gatito aleatorio">
+            <button id="btn2">Guardar gato en favoritos</button>
+        </article>
 
-    <button onclick="reloadRandomMichis()">Recargar</button>
+        <article class="kitty-card">
+            <img id="img4" width="150" height="150" alt="Foto de gatito aleatorio">
+            <button id="btn2">Guardar gato en favoritos</button>
+        </article>
+
+        <article class="kitty-card">
+            <img id="img5" width="150" height="150" alt="Foto de gatito aleatorio">
+            <button id="btn2">Guardar gato en favoritos</button>
+        </article>
+
+        <article class="kitty-card">
+            <img id="img6" width="150" height="150" alt="Foto de gatito aleatorio">
+            <button id="btn2">Guardar gato en favoritos</button>
+        </article>
+
     </section>
 
+    <button onclick="reloadRandomMichis()">Recargar</button>
+
+    <h2>Gatitos Favoritos</h2>
+
     <section id="favoritesMichis">
-        <h2>Gatitos Favoritos</h2>
+
         
-        <article>
-            <img id="img1" width="150" alt="Foto de gatito aleatorio">
+        <div class="kitty-card-fav">
+            <img id="img1" width="350" alt="Foto de gatito aleatorio">
             <button>Sacar al gato de favoritos</button>
-        </article>
+        </div>
     </section>
 
     

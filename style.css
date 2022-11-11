@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+
+
+body {
+    background-color: aqua;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.main-title {
+    text-align: center;
+}
+
+#ramdomMichis {
+    background-color: blue;
+    gap: 1em;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+#favoritesMichis {
+    background-color: azure;
+}
+
+.kitty-card {
+    background-color: bisque;
+    display: flex;
+    flex-direction: column;
+}
+
+.kitty-card-fav {
+    background-color: red;
+}
+
+h2 {
+    text-align: center;
+    padding-bottom: 2em;
+}
+button {
+    background-color: red;
+    width: 150px;
+    margin-top: 1em;
+}
+
+#favoritesMichis {
+    background-color: green;
+    gap: 1em;
+    display: flex;
+}
+
+article {
+    background-color: yellow;
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (max-width: 600px) { 
+    #ramdomMichis {
+        background-color: violet;
+        gap: 1em;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
