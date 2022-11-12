@@ -81,9 +81,10 @@ async function loadFavoritesmMichis() {
 
         data.forEach(kitty => {
             const article = document.createElement('article')
+            article.className = 'nose'
             const img = document.createElement('img')
             const btn = document.createElement('button')
-            const btnText = document.createTextNode('Sacar al gatito de favoritos');
+            const btnText = document.createTextNode('Sacar al gatito de favoritos 😿');
 
             img.src = kitty.image.url
             img.width = 150

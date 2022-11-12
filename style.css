@@ -2,8 +2,10 @@
 
 
 body {
-    margin: 0;
+    margin: 1em auto;
     font-family: 'Roboto', sans-serif;
+    background-color: black;
+    color: white;
 }
 
 .main-title {
@@ -11,26 +13,26 @@ body {
 }
 
 #ramdomMichis {
-    background-color: blue;
+
     gap: 1em;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
-#favoritesMichis {
-    background-color: azure;
-}
+
 
 .kitty-card {
-    background-color: bisque;
+
     display: flex;
     flex-direction: column;
     align-items: center;
+    border: 1px solid blueviolet;
+    height: 15em;
+    border-radius: 20px;
+    width: 150px;
 }
 
-.kitty-card-fav {
-    background-color: red;
-}
+
 
 h2 {
     text-align: center;
@@ -40,13 +42,18 @@ button {
     background-color: transparent;
     color: blueviolet;
     border: 1px solid blueviolet;
-    width: 150px;
-    margin-top: 1em;
+    width: 100px;
+    margin-top: 2em;
     border-radius: 20px;
 }
 
 .reload-button {
-    background-color: black;
+    background-color: blueviolet;
+    height: 50px;
+    width: 150px;
+    font-weight: bolder;
+    font-size: larger;
+    color: white;
 }
 
 .buttonContainer {
@@ -54,7 +61,7 @@ button {
 }
 
 #favoritesMichis {
-    background-color: green;
+
     gap: 1em;
     display: flex;
     padding-left: 3em;
@@ -65,20 +72,40 @@ img {
 }
 
 article {
-    background-color: yellow;
+
     display: flex;
     flex-direction: column;
+    text-align: center;
 }
+
+.nose {
+    border: 1px solid blueviolet;
+    height: 15em;
+    border-radius: 20px;
+    align-items: center;
+    }
+
+
 
 @media screen and (max-width: 600px) { 
     body {
         margin: 1em auto;
         font-family: 'Roboto', sans-serif;
         width: 80%;
+        background-color: black;
+        color: white;
 
     }
+
+    .nose {
+    border: 1px solid blueviolet;
+    height: 15em;
+    border-radius: 20px;
+    align-items: center;
+    }
+
     #ramdomMichis {
-        background-color: violet;
+
         gap: 1em;
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -88,5 +115,24 @@ article {
     #favoritesMichis { 
         margin: 0 auto;
         padding-left: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
     }
+
+    .kitty-card {
+    border: 1px solid blueviolet;
+    height: 15em;
+    border-radius: 20px;
+    }
+
+    button { 
+        width: 100px;
+     }  
+     .reload-button {
+        background-color: black;
+        height: 50px;
+        width: 150px;
+        font-weight: bolder;
+        font-size: larger;
+    } 
 }
