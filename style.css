@@ -4,12 +4,26 @@
 body {
     margin: 1em auto;
     font-family: 'Roboto', sans-serif;
+    background-image: url('./catHero.jpg');
+    background-repeat: no-repeat;
     background-color: black;
     color: white;
 }
 
+.hero {
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 50vh;
+    padding-top: 2em;
+}
+
 .main-title {
     text-align: center;
+}
+
+.presentation {
+    text-align: center;
+    color: beige;
 }
 
 #ramdomMichis {
@@ -17,6 +31,7 @@ body {
     gap: 1em;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    padding-left: 3em;
 }
 
 
@@ -39,8 +54,9 @@ h2 {
 
 }
 button {
-    background-color: transparent;
-    color: blueviolet;
+    background-color: blueviolet;
+    color: white;
+    font-weight: bolder;
     border: 1px solid blueviolet;
     width: 100px;
     margin-top: 2em;
@@ -62,7 +78,7 @@ button {
 
 #favoritesMichis {
 
-    gap: 1em;
+    gap: 3em;
     display: flex;
     padding-left: 3em;
 }
@@ -91,10 +107,33 @@ article {
     body {
         margin: 1em auto;
         font-family: 'Roboto', sans-serif;
-        width: 80%;
+        background-image: none;
         background-color: black;
         color: white;
 
+    }
+
+    h1 {
+        padding-top: 0;
+        margin-top: 0;
+    }
+
+    h2 {
+        margin-top: 0;
+    }
+
+    .presentation {
+        text-align: center;
+        color: beige;
+        margin-top: 0;
+        margin-bottom: auto;
+    }
+    .hero {
+        background-image: url('./catHero2.jpg');
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 30vh;
+        padding-top: 0;
     }
 
     .nose {
@@ -102,21 +141,24 @@ article {
     height: 15em;
     border-radius: 20px;
     align-items: center;
+    width: 150px;
     }
 
     #ramdomMichis {
 
-        gap: 1em;
+
         display: grid;
         grid-template-columns: 1fr 1fr;
         margin: 0 auto;
+        padding-left: 25px;
     }
 
     #favoritesMichis { 
         margin: 0 auto;
-        padding-left: 0;
+        padding-left: 25px;
         display: grid;
         grid-template-columns: 1fr 1fr;
+        gap: 1em;
     }
 
     .kitty-card {
@@ -127,9 +169,12 @@ article {
 
     button { 
         width: 100px;
+        background: blueviolet;
+        color: white;
+        font-weight: bolder;
      }  
      .reload-button {
-        background-color: black;
+        background-color: blueviolet;
         height: 50px;
         width: 150px;
         font-weight: bolder;
